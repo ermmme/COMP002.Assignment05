@@ -3,8 +3,8 @@
 // Example output:
 // console.log(range(1, 10)); // outputs [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-let start = 1;
-let end = 10;
+let start = 1; // Start of the range
+let end = 10; // End of the range
 
 function customRange(startPoint, endPoint) {
   let values = [];
@@ -13,7 +13,7 @@ function customRange(startPoint, endPoint) {
     values.push(num);
   }
 
-  return values;
+  return values; // Return the array of numbers from startPoint to endPoint
 }
 
 console.log(customRange(start, end));
@@ -32,7 +32,7 @@ function calculateSum(arr) {
     sumTotal += arr[index];
   }
 
-  return sumTotal;
+  return sumTotal; // Return the total sum of the array
 }
 
 console.log(calculateSum(numbersArray));
@@ -51,30 +51,32 @@ console.log(calculateSum(numbersArray));
 // reverseArrayInPlace(arrayValue);
 // console.log(arrayValue); // outputs [5, 4, 3, 2, 1]
 
+// Create a new array with reversed elements
 function invertArray(originalArray) {
   let flippedArray = [];
   for (let index = originalArray.length - 1; index >= 0; index--) {
-    flippedArray.push(originalArray[index]);
+    flippedArray.push(originalArray[index]); // Add elements to the new array in reverse order
   }
   return flippedArray;
 }
 
+// Reverse the array in place without creating a new one
 function reverseArrayDirectly(modifiableArray) {
   let leftIndex = 0;
   let rightIndex = modifiableArray.length - 1;
 
   while (leftIndex < rightIndex) {
-    let temp = modifiableArray[leftIndex];
-    modifiableArray[leftIndex] = modifiableArray[rightIndex];
-    modifiableArray[rightIndex] = temp;
+    let temp = modifiableArray[leftIndex]; // Temporarily hold the value at the left index
+    modifiableArray[leftIndex] = modifiableArray[rightIndex]; // Swap values
+    modifiableArray[rightIndex] = temp; // Complete the swap
 
-    leftIndex++;
-    rightIndex--;
+    leftIndex++; // Move to the next position on the left
+    rightIndex--; // Move to the next position on the right
   }
 }
 
-console.log(invertArray(["A", "B", "C"]));
+console.log(invertArray(["A", "B", "C"])); // Output: ["C", "B", "A"]
 
 let arrayExample = [1, 2, 3, 4, 5];
 reverseArrayDirectly(arrayExample);
-console.log(arrayExample);
+console.log(arrayExample); // Output: [5, 4, 3, 2, 1]
